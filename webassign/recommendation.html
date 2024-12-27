@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Recommendation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Career Recommendation</h1>
+    <form id="questionnaire-form">
+      <h2>Answer the following questions:</h2>
+      <div>
+        <label>1. What is your merit percentage?</label>
+        <select id="merit" name="merit" required>
+          <option value="">Select...</option>
+          <option value="High">Above 80%</option>
+          <option value="Moderate">50-80%</option>
+          <option value="Low">Below 50%</option>
+        </select>
+      </div>
+      <div>
+        <label>2. What are your top interests?</label>
+        <select id="interests" name="interests" required>
+          <option value="">Select...</option>
+          <option value="Programming">Programming</option>
+          <option value="Biology">Biology</option>
+          <option value="Business">Business</option>
+          <option value="Art">Art</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Law">Law</option>
+        </select>
+      </div>
+      <div>
+        <label>3. Which subjects do you excel in?</label>
+        <select id="strengths" name="strengths" required>
+          <option value="">Select...</option>
+          <option value="Math">Math</option>
+          <option value="Science">Science</option>
+          <option value="Business">Business</option>
+          <option value="Arts">Arts</option>
+        </select>
+      </div>
+      <div>
+        <label>4. What do you struggle with academically?</label>
+        <select id="weaknesses" name="weaknesses" required>
+          <option value="">Select...</option>
+          <option value="Math">Math</option>
+          <option value="Science">Science</option>
+          <option value="Writing">Writing</option>
+          <option value="Law">Law</option>
+        </select>
+      </div>
+      <div>
+        <label>5. What hobbies or activities do you enjoy?</label>
+        <select id="hobbies" name="hobbies" required>
+          <option value="">Select...</option>
+          <option value="Coding">Coding</option>
+          <option value="Sports">Sports</option>
+          <option value="Reading">Reading</option>
+          <option value="Music">Music</option>
+        </select>
+      </div>
+      <div>
+        <label>6. Do you prefer working indoors or outdoors?</label>
+        <select id="work-environment" name="work-environment" required>
+          <option value="">Select...</option>
+          <option value="Indoors">Indoors</option>
+          <option value="Outdoors">Outdoors</option>
+        </select>
+      </div>
+      <div>
+        <label>7. Would you like a desk job or a field job?</label>
+        <select id="job-type" name="job-type" required>
+          <option value="">Select...</option>
+          <option value="Desk Job">Desk Job</option>
+          <option value="Field Job">Field Job</option>
+        </select>
+      </div>
+      <div>
+        <label>8. Do you want to work in Pakistan or abroad?</label>
+        <select id="work-location" name="work-location" required>
+          <option value="">Select...</option>
+          <option value="Pakistan">Pakistan</option>
+          <option value="Abroad">Abroad</option>
+        </select>
+      </div>
+      <div>
+        <label>9. Are you comfortable with science-related fields?</label>
+        <select id="science" name="science" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div>
+        <label>10. Do you like creative fields?</label>
+        <select id="creative" name="creative" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div>
+        <label>11. How important is a high salary for you?</label>
+        <select id="salary-priority" name="salary-priority" required>
+          <option value="">Select...</option>
+          <option value="Very Important">Very Important</option>
+          <option value="Moderately Important">Moderately Important</option>
+          <option value="Not Important">Not Important</option>
+        </select>
+      </div>
+      <div>
+        <label>12. Are you interested in high-demand fields like AI, Data Science, or Medicine?</label>
+        <select id="high-demand" name="high-demand" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <button type="submit">Get Recommendation</button>
+    </form>
+    <div id="recommendation"></div>
+  </div>
+  <script>
+    document.getElementById("questionnaire-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get selected answers
+    const merit = document.getElementById("merit").value;
+    const interests = document.getElementById("interests").value;
+    const strengths = document.getElementById("strengths").value;
+    const weaknesses = document.getElementById("weaknesses").value;
+    const hobbies = document.getElementById("hobbies").value;
+    const workEnvironment = document.getElementById("work-environment").value;
+    const jobType = document.getElementById("job-type").value;
+    const workLocation = document.getElementById("work-location").value;
+    const science = document.getElementById("science").value;
+    const creative = document.getElementById("creative").value;
+    const salaryPriority = document.getElementById("salary-priority").value;
+    const highDemand = document.getElementById("high-demand").value;
+
+    let recommendation = "Based on your answers, we recommend the following career path:";
+
+    // High merit (> 80%)
+    if (merit === "High") {
+        if (interests === "Biology" && strengths === "Science" && science === "Yes" && highDemand === "Yes") {
+            recommendation = "We recommend pursuing a career in Medicine or Healthcare.";
+        } else if (interests === "Biology" && strengths === "Science" && science === "Yes" && highDemand === "No") {
+            recommendation = "We recommend exploring careers in Research or Environmental Science.";
+        } else if (interests === "Programming" && highDemand === "Yes") {
+            recommendation = "We recommend pursuing a career in Data Science or AI.";
+        } else if (interests === "Business" && salaryPriority === "Very Important") {
+            recommendation = "We recommend a career in Finance or Business Administration.";
+        } else if (interests === "Engineering" && strengths === "Science" && highDemand === "Yes") {
+            recommendation = "We recommend pursuing a career in Engineering, such as Civil, Mechanical, or Electronics.";
+        }
+    }
+
+    // Moderate merit (50-80%)
+    else if (merit === "Moderate") {
+        if (interests === "Programming" && jobType === "Desk Job" && workEnvironment === "Indoors") {
+            recommendation = "We recommend a career in Software Development or IT Consultancy.";
+        } else if (interests === "Business" && salaryPriority === "Very Important" && workLocation === "Abroad") {
+            recommendation = "We recommend a career in International Business or Marketing.";
+        } else if (interests === "Science" && science === "Yes" && jobType === "Field Job") {
+            recommendation = "We recommend a career in Environmental Science or Agriculture.";
+        }
+    }
+
+    // Low merit (< 50%)
+    else if (merit === "Low") {
+        if (workLocation === "Pakistan" && jobType === "Field Job" && hobbies === "Sports") {
+            recommendation = "We recommend a career in Sports Management or Physical Therapy.";
+        } else if (workLocation === "Pakistan" && jobType === "Field Job" && interests === "Biology") {
+            recommendation = "We recommend a career in Agricultural Science or Environmental Conservation.";
+        } else if (workLocation === "Abroad" && salaryPriority === "Very Important") {
+            recommendation = "We recommend a career in Business, Marketing, or Management.";
+        }
+    }
+
+    // Handling other cases based on specific combinations
+    if (weaknesses === "Math" && science === "No") {
+        recommendation = "A career in Business, Law, or Marketing could be a better fit for you.";
+    }
+
+    if (creative === "No" && jobType === "Field Job" && workEnvironment === "Outdoors") {
+        recommendation = "We recommend pursuing a career in Agriculture or Forestry.";
+    }
+
+    if (hobbies === "Sports" && workLocation === "Pakistan") {
+        recommendation = "We recommend a career in Sports Management or Coaching.";
+    }
+
+    // Display the recommendation
+    document.getElementById("recommendation").innerHTML = recommendation;
+});
+
+    
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - University Admission Guides & Study Materials</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+       /* Base Styles */
+body {
+    background-color: #EAE0D5; /* Light beige */
+    color: #22333B; /* Dark blue-green */
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Prevent navbar overlap */
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #0A0908; /* Black */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #EAE0D5; /* Light beige */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #EAE0D5; /* Light beige */
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #C6AC8F; /* Light brown */
+}
+
+/* Search Bar */
+.search-bar {
+    max-width: 500px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    padding: 12px;
+    width: 80%;
+    border-radius: 25px;
+    border: 2px solid #22333B; /* Dark blue-green */
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #C6AC8F; /* Light brown */
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 50px;
+}
+
+/* Resource Cards */
+.resource {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.resource-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: 0.3s;
+    border: 2px solid #C6AC8F; /* Light brown border */
+}
+
+.resource-card:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.resource-card h4 {
+    color: #22333B; /* Dark blue-green */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.resource-card a {
+    color: #22333B; /* Dark blue-green */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.resource-card a:hover {
+    color: #C6AC8F; /* Light brown */
+}
+
+/* Video Embed Styles */
+.video-frame {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 200px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #22333B; /* Dark blue-green */
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #C6AC8F; /* Light brown */
+}
+
+/* Hidden class for resources not matching search */
+.hidden {
+    display: none;
+}
+
+/* Modal Styles (if you decide to use modals later) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+    display: flex;  /* Use flexbox to align the modal content */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    z-index: 9999;  /* Ensure the modal is on top */
+    opacity: 0;  /* Initially hidden */
+    pointer-events: none;  /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease;  /* Smooth fade-in effect */
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.modal h4 {
+    color: #22333B;
+    font-size: 1.5rem;
+}
+
+.modal p {
+    color: #5E503F;
+    margin-bottom: 1rem;
+}
+
+.modal button {
+    background-color: #22333B;
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #C6AC8F; /* Light brown */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Unitalash</div>
+        <ul>
+            <li><a href="web.html">Home</a></li>
+            <li><a href="field.html">Fields</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="student-reviews.html">Reviews</a></li>
+        </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search resources..." onkeyup="filterResources()">
+    </div>
+
+    <!-- Resources Sections -->
+    <div class="container">
+
+        <h1 class="text-center mb-5">Resources - University Admission Guides & Study Materials</h1>
+
+        <!-- Computer Science Notes Section -->
+        <section id="cs-notes" class="section">
+            <h2>Computer Science Notes</h2>
+            <div class="resource">
+                <div class="resource-card" data-category="cs notes">
+                    <h4>Algorithms & Data Structures Notes</h4>
+                    <a href="link-to-cs-notes-1.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="cs notes">
+                    <h4>Operating Systems Concepts</h4>
+                    <a href="link-to-cs-notes-2.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="cs notes">
+                    <h4>Computer Networks - Study Guide</h4>
+                    <a href="link-to-cs-notes-3.pdf" target="_blank">Download PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Past Papers Section -->
+        <section id="business-papers" class="section">
+            <h2>Business Past Papers</h2>
+            <div class="resource">
+                <div class="resource-card" data-category="business papers">
+                    <h4>Business Administration Past Paper 1</h4>
+                    <a href="link-to-business-paper-1.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="business papers">
+                    <h4>Marketing Management Past Paper 2</h4>
+                    <a href="link-to-business-paper-2.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="business papers">
+                    <h4>Financial Accounting Past Paper 3</h4>
+                    <a href="link-to-business-paper-3.pdf" target="_blank">Download PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Process Guides Section -->
+        <section id="admission-guides" class="section">
+            <h2>University Admission Guides</h2>
+            <div class="resource">
+                <div class="resource-card" data-category="admission guides">
+                    <h4>Guide to Apply for Computer Science Programs</h4>
+                    <a href="link-to-admission-guide-1.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="admission guides">
+                    <h4>Business Administration Admissions Guide</h4>
+                    <a href="link-to-admission-guide-2.pdf" target="_blank">Download PDF</a>
+                </div>
+                <div class="resource-card" data-category="admission guides">
+                    <h4>Engineering Program Admissions Overview</h4>
+                    <a href="link-to-admission-guide-3.pdf" target="_blank">Download PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Preparation Videos -->
+        <section id="youtube-videos" class="section">
+            <h2>YouTube Preparation Videos</h2>
+            <div class="row">
+                <div class="col-md-4 video-frame" data-category="videos">
+                    <h4>How to prepare for DSA</h4>
+                    <iframe src="https://www.youtube.com/watch?v=yRpLlJmRo2w&list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop" frameborder="0"></iframe>
+                </div>
+                <div class="col-md-4 video-frame" data-category="videos">
+                    <h4>Effective Study Strategies for University Exams</h4>
+                    <iframe src="https://www.youtube.com/watch?v=TjPFZaMe2yw" frameborder="0"></iframe>
+                </div>
+                <div class="col-md-4 video-frame" data-category="videos">
+                    <h4>Top Tips for University Application Success</h4>
+                    <iframe src="https://www.youtube.com/watch?v=_Jde0DPXEYI" frameborder="0"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Search functionality for filtering resources
+        function filterResources() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const resources = document.querySelectorAll('.resource-card');
+            resources.forEach(resource => {
+                const resourceContent = resource.textContent.toLowerCase();
+                if (resourceContent.includes(searchTerm)) {
+                    resource.classList.remove('hidden');
+                } else {
+                    resource.classList.add('hidden');
+                }
+            });
+        }
+
+        // Show the "Back to Top" button when scrolling
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.querySelector('.back-to-top').style.display = "block";
+            } else {
+                document.querySelector('.back-to-top').style.display = "none";
+            }
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

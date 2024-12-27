@@ -1,0 +1,304 @@
+/* Features Section */
+#features {
+    background-color: #22333B;
+    color: #EAE0D5;
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+#features .row {
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing between cards */
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.feature-card {
+    background-color: #5E503F;
+    border-radius: 10px;
+    padding: 2rem;
+    color: #EAE0D5;
+    text-align: center;
+    transition: transform 0.3s;
+    flex: 1; /* Ensures all cards are of equal size */
+    min-width: 250px; /* Ensures minimum width to keep cards from shrinking too much */
+    max-width: 300px; /* Ensures a maximum width for uniformity */
+    height: 200px; /* Fixed height to make them consistent */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Hover effect for feature cards */
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* General styles for all feature cards */
+.feature-card, .feature-card-link {
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #EAE0D5;
+    background-color: #0A0908;
+}
+
+h1, h2, h4, p {
+    margin: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #22333B;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    margin-left: 10px; 
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo {
+    width: 40px;
+    margin-right: 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: 0px;
+}
+
+.navbar-nav .nav-link {
+    color: #EAE0D5;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #C6AC8F;
+}
+
+.btn-primary {
+    background-color: #5E503F;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #C6AC8F;
+}
+* Carousel Styling */
+  #carouselContainer {
+    position: relative;
+  }
+  
+  .carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  #carouselContainer h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #C6AC8F;
+  }
+  
+  #carouselContainer p {
+    font-size: 1.2rem;
+    color: #EAE0D5;
+  }
+  
+  #carouselContainer .form-control {
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  #carouselContainer .btn-dark {
+    background-color: #5E503F;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+  }
+  
+  #carouselContainer .btn-dark:hover {
+    background-color: #C6AC8F;
+    color: #22333B;
+  }
+  
+.search-bar {
+    max-width: 600px;
+    width: 100%;
+}
+
+
+/* Hover Effects for Review Cards */
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background-color: #EAE0D5;
+    border-radius: 10px;
+    padding: 1.5rem;
+    max-width: 300px;
+    color: #0A0908;
+}
+
+.review-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #C6AC8F;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #0A0908;
+    color: #EAE0D5;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 0;
+}
+.contact-section {
+    background-color: #000; /* Black background */
+}
+
+.contact-section .section-title {
+    color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-section p,
+.contact-section li {
+    color: #C6AC8F ; 
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-section a {
+    color: #C6AC8F ;
+    text-decoration: underline;
+}
+
+.contact-section a:hover {
+    color: #C6AC8F ;
+}
+
+.contact-section form .form-control {
+    background-color: 22333B;
+    color: #fff;
+    border: 1px solid #C6AC8F ;
+}
+
+.contact-section form .btn-primary {
+    background-color: #C6AC8F ;
+    border-color: #000000;
+}
+
+.contact-section form .btn-primary:hover {
+    background-color: #822FAF;
+    border-color: #822FAF;
+}
+/* Success Stories Section */
+#success-stories {
+    background-color: #C6AC8F;
+    padding: 4rem 1rem;
+  }
+  .story-img {
+    display: none;
+  }
+  
+  .story-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 350px; /* Fixed minimum height to ensure consistency */
+}
+
+  
+  
+  .story-content h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #22333B;
+    margin-bottom: 1rem;
+  }
+  
+  .story-content p {
+    font-size: 1rem;
+    color: #5E503F;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #22333B;
+    color: #EAE0D5;
+    padding: 1.5rem 0;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  

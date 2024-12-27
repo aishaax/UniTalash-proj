@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unitalsh | Student Guidance Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="Brown and Beige Minimalist Luxury Fashion Typographic Logo.png" alt="Logo" class="logo"> Unitalsh
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faqs.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="#counseling" class="btn btn-primary ms-3">Get Started</a>
+            </div>
+        </div>
+    </nav>
+   
+    <!-- Carousel Section with Search Bar Overlay -->
+    <div id="carouselContainer" class="position-relative">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="c1.jpg" class="d-block w-100" alt="First Slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="c2.jpg" class="d-block w-100" alt="Second Slide">
+                </div>
+                <div class="carousel-item">
+                    <img src="c3.jpg" class="d-block w-100" alt="Third Slide">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-overlay"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+            <h1 class="text-light mb-4">Welcome to Unitalsh</h1>
+            <p class="text-light mb-5">Your Future, Simplified: Find Universities, Explore Careers, and Prepare for Success</p>
+            <div class="d-flex justify-content-center">
+                <input type="text" class="form-control w-50 me-2" id="searchBar" placeholder="Search" onkeyup="searchContent()">
+                <button class="btn btn-primary" type="button" onclick="searchContent()">Search</button>
+            </div>
+        </div> 
+            
+            
+        </div>
+    </div>
+
+    <!-- Features Section -->
+<section id="features" class="py-5">
+    <div class="container text-center">
+        <h2 class="section-title">Explore Our Features</h2>
+        <div class="row g-4">
+            <!-- Features (6 Cards) -->
+            <div class="col-md-4" onclick="window.location.href='MERITCALCULATOR.html'">
+                <div class="feature-card">
+                    <h4>Merit Calculator</h4>
+                    <p>Calculate your merit for desired University</p>
+                </div>
+            </div>            
+            <div class="col-md-4"onclick="window.location.href='recommendation.html'">
+                <div class="feature-card">
+                    <h4>Free Career Recommendation</h4>
+                    <p>Because we care</p>
+                </div>
+            </div>
+            <div class="col-md-4" onclick="window.location.href='career.html'">
+                <div class="feature-card">
+                    <h4>Career Counseling</h4>
+                    <p>Counselling By Experts</p>  
+                </div>
+            </div>
+            <div class="col-md-4" onclick="window.location.href='unifilter.html'">
+                <div class="feature-card">
+                    <h4>Find you dream Universities</h4>
+                    <p>Universities suggestions based upon your interests</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card" onclick="window.location.href='field.html'">
+                    <h4>Field Scope</h4>
+                    <p>Explore career opportunities in various fields.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card" onclick="window.location.href='student-reviews.html'">
+                    <h4>Student Reviews</h4>
+                    <p>Read experiences shared by other students.</p>
+                </div>
+            </div>
+            <div class="col-md-4" onclick="window.location.href='resources.html'">
+                <div class="feature-card">
+                    <h4>Study Material</h4>
+                    <p>Get access to study resources</p>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories Section -->
+<section id="success-stories" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Success Stories</h2>
+        <div id="successCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Carousel Item -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="story-card">
+                            <div class="story-content">
+                                <h4>Ali Raza</h4>
+                                <p>"Thanks to Unitalsh, I secured admission to my dream university! Their guidance was truly invaluable, providing me with clarity and confidence throughout the process. The resources and support they offered were top-notch and tailored to my needs. I’m forever grateful for their help in making my aspirations a reality. If you’re looking for expert advice, Unitalsh is the way to go!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Second Carousel Item -->
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="story-card">
+                            <div class="story-content">
+                                <h4>Fatima Qureshi</h4>
+                                <p>"Unitalsh helped me explore careers and find the perfect fit! Their personalized approach and deep understanding of my interests and skills made all the difference. Through their workshops, career counseling, and expert advice, I discovered opportunities I hadn’t even considered before. They guided me step-by-step, from choosing the right field to preparing for interviews and applications. Thanks to their unwavering support, I not only found my passion but also landed a position in a program that aligns perfectly with my goals. I owe my success to Unitalsh for unlocking my potential"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#successCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#successCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section py-5 text-white">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Get in Touch</h3>
+                    <p>We’d love to hear from you! Whether you have questions about our services or need guidance, feel free to reach out.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Location:</strong> COMSATS University, Islamabad, Pakistan</li>
+                        <li><strong>Phone:</strong> +92 300 1234567</li>
+                        <li><strong>Email:</strong> <a href="mailto:msbagbuddies@gmail.com" class="text-white">msbagbuddies@gmail.com</a></li>
+                    </ul>
+    
+                    <!-- Map Section -->
+                    <h4>Our Location</h4>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBgoJrtIoaArdxNYlL3av0vMZzIZf2nmbE&q=COMSATS+University,+Islamabad,+Pakistan"
+                            width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Send Us an Email</h3>
+                    <form id="contactForm" action="http://localhost:3000/send-email" method="POST">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2024 Unitalsh. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function searchContent() {
+            const searchValue = document.getElementById("searchBar").value.toLowerCase();
+            const searchableElements = document.querySelectorAll("h1, h2, h3, p, a, div");
+
+            searchableElements.forEach(element => {
+                const text = element.textContent.toLowerCase();
+                if (text.includes(searchValue)) {
+                    element.style.display = ""; // Show element
+                } else {
+                    element.style.display = "none"; // Hide element
+                }
+            });
+        }
+    </script> <script src="script.js"></script>
+    
+
+
+</body>
+</html>

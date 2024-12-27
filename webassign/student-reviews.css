@@ -1,0 +1,42 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+    color: #EAE0D5;
+}
+
+.filters input, .filters select {
+    border: 1px solid #C6AC8F;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.filters button:hover {
+    background-color: #C6AC8F;
+}
+
+.review-card {
+    border: none;
+    background-color: #22333B;
+    color: #EAE0D5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stars {
+    color: #C6AC8F;
+}

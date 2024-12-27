@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0A0908;
+      color: #EAE0D5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group select,
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      background: #22333B;
+      color: #EAE0D5;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #5E503F;
+      color: #EAE0D5;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .result {
+      background: #22333B;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Filter Universities</h1>
+    <div class="form-group">
+      <label for="city">City</label>
+      <select id="city">
+        <option value="">Any</option>
+        <option value="Islamabad">Islamabad</option>
+        <option value="Lahore">Lahore</option>
+        <option value="Karachi">Karachi</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="merit">Merit</label>
+      <input type="number" id="merit" placeholder="Enter maximum merit">
+    </div>
+    <div class="form-group">
+      <label for="course">Course</label>
+      <select id="course">
+        <option value="">Any</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Business">Business</option>
+      </select>
+    </div>
+    <button onclick="filterUniversities()">Search</button>
+    <div class="results" id="results"></div>
+  </div>
+  <script>
+    async function filterUniversities() {
+      const city = document.getElementById("city").value;
+      const merit = document.getElementById("merit").value;
+      const course = document.getElementById("course").value;
+
+      const query = new URLSearchParams({ city, merit, course }).toString();
+      const response = await fetch(`http://localhost:5000/api/filter?${query}`);
+      const data = await response.json();
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = data.map(uni => `
+        <div class="result">
+          <h2>${uni.name}</h2>
+          <p><strong>City:</strong> ${uni.city}</p>
+          <p><strong>Merit:</strong> ${uni.merit}</p>
+          <p><strong>Courses:</strong> ${uni.courses.join(", ")}</p>
+          <p><a href="${uni.officialSite}" target="_blank">Official Site</a></p>
+        </div>
+      `).join("");
+    }
+  </script>
+</body>
+</html>
